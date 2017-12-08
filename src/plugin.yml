@@ -1,0 +1,29 @@
+main: Bedwars.Main
+author: PixelsDE
+name: Bedwars
+version: 1.0.1
+description: Bedwars
+commands:
+  start:
+    description: Starts a Game!
+  setspawn:
+    description: Sets the Spawns of the Teams!
+  setvillager:
+    description: Sets the Location of the Shop-Villager!
+  setlobby:
+    description: Sets the Lobby!
+  setspectator:
+    description: Sets the Spawns of the Spectator!
+  setgold:
+    description: Sets the Location of the Goldspawner!
+  setemerald:
+    description: Sets the Location of the Emeraldspawner!
+  setdiamond:
+    description: Sets the Location of the Diamondspawner!
+  leave:
+    description: Leave the Game!
+    aliases: [l, lobby, hub, left, disconnect, quit]
+  setbed:
+    description: Sets the Location of the Team-Beds!
+  editmode:
+    description: Enables and Disables the Editmode!
