@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="BW">
+    <output-path>$PROJECT_DIR$/../../Mc Server/plugins</output-path>
+    <root id="archive" name="BW.jar">
+      <element id="module-output" name="Bedwars" />
+    </root>
+  </artifact>
+</component>
