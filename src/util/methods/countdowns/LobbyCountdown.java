@@ -48,24 +48,29 @@ public class LobbyCountdown extends Countdown {
                         switch (seconds) {
 
                             case 60:
+                                break;
                             case 30:
+
                                 for (Player all : Bukkit.getOnlinePlayers())
                                     all.sendMessage(prefix+msg);
                                 for (Player a : Var.playing)
                                     a.playSound(a.getLocation(), Sound.BLOCK_LAVA_POP, 1, 1);
                                 break;
+
                             case 15:
                                 for (Player all : Bukkit.getOnlinePlayers())
                                     all.sendMessage(prefix+msg);
                                 for (Player a : Var.playing)
                                     a.playSound(a.getLocation(), Sound.BLOCK_LAVA_POP, 1, 1);
                                 break;
+
                             case 10:
                                 for (Player all : Bukkit.getOnlinePlayers())
                                     all.sendMessage(prefix+msg);
                                 for (Player a : Var.playing)
                                     a.playSound(a.getLocation(), Sound.BLOCK_LAVA_POP, 1, 1);
                                 break;
+
                             case 5:
 
                                 for (Player all : Bukkit.getOnlinePlayers())
@@ -73,6 +78,7 @@ public class LobbyCountdown extends Countdown {
                                 for (Player a : Var.playing)
                                     a.playSound(a.getLocation(), Sound.BLOCK_LAVA_POP, 1, 1);
                                 break;
+
                             case 3:
 
                                 for (Player all : Bukkit.getOnlinePlayers())
@@ -80,12 +86,15 @@ public class LobbyCountdown extends Countdown {
                                 for (Player a : Var.playing)
                                     a.playSound(a.getLocation(), Sound.BLOCK_LAVA_POP, 1, 1);
                                 break;
+
                             case 2:
                                 for (Player all : Bukkit.getOnlinePlayers())
                                 all.sendMessage(prefix+msg);
                                 for (Player a : Var.playing)
                                     a.playSound(a.getLocation(), Sound.BLOCK_LAVA_POP, 1, 1);
                                 break;
+
+
                             case 1:
 
                                 YamlConfiguration cfg1 = Messages.cfg;
