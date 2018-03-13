@@ -1,10 +1,10 @@
 package listeners;
 
-import Bedwars.Main;
-import methods.Bed;
-import methods.Messages;
-import methods.Settings;
-import methods.Var;
+import main.Main;
+import util.methods.Bed;
+import util.methods.Messages;
+import util.methods.Settings;
+import util.methods.Var;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -73,7 +73,7 @@ public class EVENTBett implements Listener {
 
                     Bukkit.broadcastMessage(prefix1 + msg1);
                     Var.bed_red = false;
-                    p.playSound(p.getLocation(), Sound.WITHER_DEATH, 1, 1);
+                    p.playSound(p.getLocation(), Sound.ENTITY_WITHER_DEATH, 1, 1);
                     if (Var.red.contains(p)) {
                         String msg = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Break_Team"));
                         String prefix = ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix"));
@@ -87,14 +87,14 @@ public class EVENTBett implements Listener {
                     e.setCancelled(true);
                     String msg = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Break_Own"));
                     p.sendMessage(prefix1 + msg);
-                    p.playSound(p.getLocation(), Sound.ANVIL_LAND, 1, 1);
+                    p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_LAND, 1, 1);
                 }
 
 
             } else if (loc.distance(loc_blue) < 3) {
                 if (!Var.blue.contains(p)) {
                     e.setCancelled(false);
-                    p.playSound(p.getLocation(), Sound.WITHER_DEATH, 1, 1);
+                    p.playSound(p.getLocation(), Sound.ENTITY_WITHER_DEATH, 1, 1);
                     String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Break_Blue").replace("%player%", p.getDisplayName()));
 
                     Bukkit.broadcastMessage(prefix1 + msg1);
@@ -110,14 +110,14 @@ public class EVENTBett implements Listener {
                     e.setCancelled(true);
                     String msg = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Break_Own"));
                     p.sendMessage(prefix1 + msg);
-                    p.playSound(p.getLocation(), Sound.ANVIL_LAND, 1, 1);
+                    p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_LAND, 1, 1);
                 }
 
 
             } else if (loc.distance(loc_green) < 3) {
                 if (!Var.green.contains(p)) {
                     e.setCancelled(false);
-                    p.playSound(p.getLocation(), Sound.WITHER_DEATH, 1, 1);
+                    p.playSound(p.getLocation(), Sound.ENTITY_WITHER_DEATH, 1, 1);
                     String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Break_Green").replace("%player%", p.getDisplayName()));
 
                     Bukkit.broadcastMessage(prefix1 + msg1);
@@ -133,14 +133,14 @@ public class EVENTBett implements Listener {
                     e.setCancelled(true);
                     String msg = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Break_Own"));
                     p.sendMessage(prefix1 + msg);
-                    p.playSound(p.getLocation(), Sound.ANVIL_LAND, 1, 1);
+                    p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_LAND, 1, 1);
                 }
 
 
             } else if (loc.distance(loc_yellow) < 3) {
                 if (!Var.yellow.contains(p)) {
                     e.setCancelled(false);
-                    p.playSound(p.getLocation(), Sound.WITHER_DEATH, 1, 1);
+                    p.playSound(p.getLocation(), Sound.ENTITY_WITHER_DEATH, 1, 1);
                     String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Break_Yellow").replace("%player%", p.getDisplayName()));
 
                     Bukkit.broadcastMessage(prefix1 + msg1);
@@ -154,7 +154,7 @@ public class EVENTBett implements Listener {
                     }
                 } else {
                     e.setCancelled(true);
-                    p.playSound(p.getLocation(), Sound.ANVIL_LAND, 1, 1);
+                    p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_LAND, 1, 1);
                     String msg = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Break_Own"));
                     p.sendMessage(prefix1 + msg);
                 }

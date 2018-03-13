@@ -1,14 +1,12 @@
 package commands;
 //Code by: PixelsDE
 
-import Bedwars.Main;
-import methods.Factory;
-import methods.Messages;
-import methods.Settings;
-import methods.Var;
+import util.methods.Factory;
+import util.methods.Messages;
+import util.methods.Settings;
+import util.methods.Var;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -46,10 +44,10 @@ public class CMDsetVillager implements CommandExecutor {
                             double z = p.getLocation().getZ();
 
 
-                            Var.cfg.set("Spawn.Villager." + i + ".World", world);
-                            Var.cfg.set("Spawn.Villager." + i + ".X", x);
-                            Var.cfg.set("Spawn.Villager." + i + ".Y", y);
-                            Var.cfg.set("Spawn.Villager." + i + ".Z", z);
+                            Var.cfg.set("Spawn.villager." + i + ".World", world);
+                            Var.cfg.set("Spawn.villager." + i + ".X", x);
+                            Var.cfg.set("Spawn.villager." + i + ".Y", y);
+                            Var.cfg.set("Spawn.villager." + i + ".Z", z);
 
                             Factory.createConfiguration(p.getLocation(), "Spawn." + i, file, cfg);
                             Villager v = p.getWorld().spawn(p.getLocation(), Villager.class);
@@ -75,7 +73,10 @@ public class CMDsetVillager implements CommandExecutor {
                     p.sendMessage(prefix1 + msg1);
                 }
             } else {
-
+                YamlConfiguration cfg1 = Messages.cfg;
+                String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Must_Player"));
+                String prefix1 = ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix"));
+                Bukkit.getConsoleSender().sendMessage(prefix1 + msg1);
             }
         }
 

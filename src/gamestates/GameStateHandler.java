@@ -2,10 +2,8 @@ package gamestates;
 
 import java.util.ArrayList;
 
-import Bedwars.Main;
-import methods.Settings;
-import methods.Var;
-import org.bukkit.plugin.Plugin;
+import main.Main;
+import util.methods.Settings;
 
 public class GameStateHandler {
 

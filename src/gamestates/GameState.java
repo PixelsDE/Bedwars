@@ -1,12 +1,10 @@
 package gamestates;
 
-import Bedwars.Main;
-import methods.Messages;
-import methods.Settings;
-import methods.countdowns.EndCountdown;
+import util.methods.Messages;
+import util.methods.Settings;
 import org.bukkit.Bukkit;
 
-import methods.Var;
+import util.methods.Var;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
 

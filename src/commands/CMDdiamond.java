@@ -1,8 +1,9 @@
 package commands;
 //Code by: PixelsDE
 
-import Bedwars.Main;
-import methods.*;
+import main.Main;
+import util.methods.*;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -49,7 +50,10 @@ public class CMDdiamond implements CommandExecutor {
                     p.sendMessage(prefix1 + msg1);
                 }
             } else {
-
+                YamlConfiguration cfg1 = Messages.cfg;
+                String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Must_Player"));
+                String prefix1 = ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix"));
+                Bukkit.getConsoleSender().sendMessage(prefix1 + msg1);
             }
         }
 

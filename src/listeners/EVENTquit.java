@@ -1,10 +1,10 @@
 package listeners;
 
-import Util.Scoreboard;
+import util.Scoreboard;
 
 
-import methods.Messages;
-import methods.Settings;
+import util.methods.Messages;
+import util.methods.Settings;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -16,7 +16,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import gamestates.GameState;
 import gamestates.GameStateHandler;
 import gamestates.LobbyState;
-import methods.Var;
+import util.methods.Var;
 
 public class EVENTquit implements Listener {
 

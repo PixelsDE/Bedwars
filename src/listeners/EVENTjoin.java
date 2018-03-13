@@ -1,12 +1,13 @@
 package listeners;
 
-import Bedwars.Main;
-import Util.Scoreboard;
+import main.Main;
+import util.Scoreboard;
+import commands.CMDvotegold;
 import gamestates.GameStateHandler;
 import gamestates.LobbyState;
-import methods.*;
-import methods.countdowns.EndCountdown;
-import methods.countdowns.LobbyCountdown;
+import util.methods.*;
+import util.methods.countdowns.EndCountdown;
+import util.methods.countdowns.LobbyCountdown;
 import org.bukkit.*;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Entity;
@@ -38,6 +39,9 @@ public class EVENTjoin implements Listener {
             e.setJoinMessage(null);
             Player p = e.getPlayer();
 
+            if (Var.playing.size() <= Settings.cfg.getInt("Max_Players")){
+                Var.spectating.add(p);
+            }
             p.resetPlayerWeather();
             p.setPlayerTime(0, true);
             if (GameStateHandler.getCurrentState() instanceof LobbyState) {
@@ -59,6 +63,8 @@ public class EVENTjoin implements Listener {
                 p.getInventory().addItem(i);
                 p.updateInventory();
 
+
+
                 for (Entity en : Bukkit.getWorld(p.getWorld().getName()).getEntities()) {
                     if (en instanceof Item)
                         en.remove();
@@ -67,8 +73,10 @@ public class EVENTjoin implements Listener {
                 Var.playing.add(p);
                 Var.plays.add(p);
 
+                CMDvotegold.yes.add(p);
+
                 for (Player a : Bukkit.getOnlinePlayers())
-                    Util.Scoreboard.updateScoreboard(a);
+                    util.Scoreboard.updateScoreboard(a);
                 p.setGameMode(GameMode.ADVENTURE);
                 Settings.pl = p.getDisplayName();
                 for (Player all : Bukkit.getOnlinePlayers()) {

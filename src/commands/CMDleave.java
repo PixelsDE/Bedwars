@@ -1,9 +1,9 @@
 package commands;
 //Code by: PixelsDE
 
-import methods.Messages;
-import methods.Settings;
-import methods.Var;
+import util.methods.Messages;
+import util.methods.Settings;
+import util.methods.Var;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -56,6 +56,10 @@ public class CMDleave implements CommandExecutor{
                     p.sendMessage(prefix1 + msg1);
                 }
             }else{
+                YamlConfiguration cfg1 = Messages.cfg;
+                String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Must_Player"));
+                String prefix1 = ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix"));
+                Bukkit.getConsoleSender().sendMessage(prefix1 + msg1);
 
             }
         }

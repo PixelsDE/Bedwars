@@ -1,9 +1,9 @@
 package listeners;
 
-import Util.Scoreboard;
-import methods.Messages;
-import methods.Settings;
-import methods.Var;
+import util.Scoreboard;
+import util.methods.Messages;
+import util.methods.Settings;
+import util.methods.Var;
 import org.bukkit.*;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -63,7 +63,7 @@ public class EVENTteam implements Listener {
                             p.updateInventory();
                             p.openInventory(inv);
                             e.setCancelled(true);
-                            p.playSound(p.getLocation(), Sound.CHEST_OPEN, 1, 1);
+                            p.playSound(p.getLocation(), Sound.BLOCK_CHEST_OPEN, 1, 1);
                             Scoreboard.updateScoreboard(p);
                         } else if (Settings.cfg.getBoolean("Teams_2") == true) {
 
@@ -84,7 +84,7 @@ public class EVENTteam implements Listener {
                             p.updateInventory();
                             p.openInventory(inv);
 
-                            p.playSound(p.getLocation(), Sound.CHEST_OPEN, 1, 1);
+                            p.playSound(p.getLocation(), Sound.BLOCK_CHEST_OPEN, 1, 1);
                             Scoreboard.updateScoreboard(p);
                         } else {
 
@@ -169,7 +169,7 @@ public class EVENTteam implements Listener {
                             p.updateInventory();
                             p.openInventory(inv);
                             e.setCancelled(true);
-                            p.playSound(p.getLocation(), Sound.CHEST_OPEN, 1, 1);
+                            p.playSound(p.getLocation(), Sound.BLOCK_CHEST_OPEN, 1, 1);
                             Scoreboard.updateScoreboard(p);
                         } else if (Settings.cfg.getBoolean("Teams_2") == true) {
 
@@ -190,7 +190,7 @@ public class EVENTteam implements Listener {
                             p.updateInventory();
                             p.openInventory(inv);
 
-                            p.playSound(p.getLocation(), Sound.CHEST_OPEN, 1, 1);
+                            p.playSound(p.getLocation(), Sound.BLOCK_CHEST_OPEN, 1, 1);
                             Scoreboard.updateScoreboard(p);
                         } else {
 
@@ -228,7 +228,7 @@ public class EVENTteam implements Listener {
                                     e.setCancelled(true);
                                     p.updateInventory();
 
-                                    p.playSound(p.getLocation(), Sound.ITEM_PICKUP, 1, 1);
+                                    p.playSound(p.getLocation(), Sound.ENTITY_ITEM_PICKUP, 1, 1);
                                     Var.blue.add(p);
                                     Var.red.remove(p);
                                     Var.green.remove(p);
@@ -247,7 +247,7 @@ public class EVENTteam implements Listener {
                                     // TODO: handle exception
                                 }
                             } else {
-                                p.playSound(p.getLocation(), Sound.ITEM_PICKUP, 1, 1);
+                                p.playSound(p.getLocation(), Sound.ENTITY_ITEM_PICKUP, 1, 1);
                                 YamlConfiguration cfg1 = Messages.cfg;
                                 String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Already_Team"));
                                 String prefix1 = ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix"));
@@ -257,7 +257,7 @@ public class EVENTteam implements Listener {
 
                             }
                         } else {
-                            p.playSound(p.getLocation(), Sound.ITEM_PICKUP, 1, 1);
+                            p.playSound(p.getLocation(), Sound.ENTITY_ITEM_PICKUP, 1, 1);
                             e.setCancelled(true);
                             YamlConfiguration cfg1 = Messages.cfg;
                             String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Team_Full"));
@@ -276,7 +276,7 @@ public class EVENTteam implements Listener {
                                 try {
                                     e.setCancelled(true);
                                     p.updateInventory();
-                                    p.playSound(p.getLocation(), Sound.ITEM_PICKUP, 1, 1);
+                                    p.playSound(p.getLocation(), Sound.ENTITY_ITEM_PICKUP, 1, 1);
                                     Var.blue.remove(p);
                                     Var.red.add(p);
                                     Var.green.remove(p);
@@ -294,7 +294,7 @@ public class EVENTteam implements Listener {
                                     // TODO: handle exception
                                 }
                             } else {
-                                p.playSound(p.getLocation(), Sound.ITEM_PICKUP, 1, 1);
+                                p.playSound(p.getLocation(), Sound.ENTITY_ITEM_PICKUP, 1, 1);
                                 e.setCancelled(true);
                                 YamlConfiguration cfg1 = Messages.cfg;
                                 String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Already_Team"));
@@ -303,7 +303,7 @@ public class EVENTteam implements Listener {
                                 Scoreboard.updateScoreboard(p);
                             }
                         } else {
-                            p.playSound(p.getLocation(), Sound.ITEM_PICKUP, 1, 1);
+                            p.playSound(p.getLocation(), Sound.ENTITY_ITEM_PICKUP, 1, 1);
                             e.setCancelled(true);
                             YamlConfiguration cfg1 = Messages.cfg;
                             String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Team_Full"));
@@ -318,7 +318,7 @@ public class EVENTteam implements Listener {
                                 try {
                                     e.setCancelled(true);
                                     p.updateInventory();
-                                    p.playSound(p.getLocation(), Sound.ITEM_PICKUP, 1, 1);
+                                    p.playSound(p.getLocation(), Sound.ENTITY_ITEM_PICKUP, 1, 1);
                                     Var.blue.remove(p);
                                     Var.red.remove(p);
                                     Var.green.add(p);
@@ -337,7 +337,7 @@ public class EVENTteam implements Listener {
                                     // TODO: handle exception
                                 }
                             } else {
-                                p.playSound(p.getLocation(), Sound.ITEM_PICKUP, 1, 1);
+                                p.playSound(p.getLocation(), Sound.ENTITY_ITEM_PICKUP, 1, 1);
                                 e.setCancelled(true);
                                 YamlConfiguration cfg1 = Messages.cfg;
                                 String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Already_Team"));
@@ -346,7 +346,7 @@ public class EVENTteam implements Listener {
                                 Scoreboard.updateScoreboard(p);
                             }
                         } else {
-                            p.playSound(p.getLocation(), Sound.ITEM_PICKUP, 1, 1);
+                            p.playSound(p.getLocation(), Sound.ENTITY_ITEM_PICKUP, 1, 1);
                             e.setCancelled(true);
                             YamlConfiguration cfg1 = Messages.cfg;
                             String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Team_Full"));
@@ -362,7 +362,7 @@ public class EVENTteam implements Listener {
                                 try {
                                     e.setCancelled(true);
                                     p.updateInventory();
-                                    p.playSound(p.getLocation(), Sound.ITEM_PICKUP, 1, 1);
+                                    p.playSound(p.getLocation(), Sound.ENTITY_ITEM_PICKUP, 1, 1);
                                     Var.blue.remove(p);
                                     Var.red.remove(p);
                                     Var.green.remove(p);
@@ -380,7 +380,7 @@ public class EVENTteam implements Listener {
                                     // TODO: handle exception
                                 }
                             } else {
-                                p.playSound(p.getLocation(), Sound.ITEM_PICKUP, 1, 1);
+                                p.playSound(p.getLocation(), Sound.ENTITY_ITEM_PICKUP, 1, 1);
                                 e.setCancelled(true);
                                 YamlConfiguration cfg1 = Messages.cfg;
                                 String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Already_Team"));
@@ -389,7 +389,7 @@ public class EVENTteam implements Listener {
                                 Scoreboard.updateScoreboard(p);
                             }
                         } else {
-                            p.playSound(p.getLocation(), Sound.ITEM_PICKUP, 1, 1);
+                            p.playSound(p.getLocation(), Sound.ENTITY_ITEM_PICKUP, 1, 1);
                             e.setCancelled(true);
                             YamlConfiguration cfg1 = Messages.cfg;
                             String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Team_Full"));
@@ -399,7 +399,7 @@ public class EVENTteam implements Listener {
                         }
 
                     } else {
-                        p.playSound(p.getLocation(), Sound.BAT_DEATH, 1, 1);
+                        p.playSound(p.getLocation(), Sound.ENTITY_BAT_DEATH, 1, 1);
                         e.setCancelled(true);
                         YamlConfiguration cfg1 = Messages.cfg;
                         String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Team_Choose"));

@@ -1,12 +1,12 @@
 package listeners;
 
-import Bedwars.Main;
-import Util.Scoreboard;
+import main.Main;
+import util.Scoreboard;
 import gamestates.GameState;
-import methods.Factory;
-import methods.Messages;
-import methods.Settings;
-import methods.Var;
+import util.methods.Factory;
+import util.methods.Messages;
+import util.methods.Settings;
+import util.methods.Var;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;

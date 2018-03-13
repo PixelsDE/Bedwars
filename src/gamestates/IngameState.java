@@ -1,17 +1,13 @@
 package gamestates;
 
-import Bedwars.Main;
-import commands.CMDsetVillager;
-import methods.Factory;
-import methods.RushSpawner;
-import methods.Settings;
-import methods.Var;
-import methods.countdowns.EndCountdown;
-import org.bukkit.Bukkit;
+import main.Main;
+import util.methods.Factory;
+import util.methods.RushSpawner;
+import util.methods.Settings;
+import util.methods.Var;
+import util.methods.countdowns.EndCountdown;
 import org.bukkit.GameMode;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 
 public class IngameState extends GameState {
 

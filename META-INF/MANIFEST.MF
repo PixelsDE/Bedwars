@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: de.bypixels.bedwars.main.Main
+Main-Class: de.bypixels.bedwars.main.Main
+

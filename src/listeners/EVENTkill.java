@@ -4,17 +4,19 @@ package listeners;
 // Copyright PixelsDE /
 // youtube.com/bypixels /
 
-import Bedwars.Main;
+import main.Main;
 import gamestates.GameState;
-import methods.Factory;
-import methods.Messages;
-import methods.Settings;
-import methods.Var;
-import net.minecraft.server.v1_8_R3.PacketPlayInClientCommand;
+import util.methods.Factory;
+import util.methods.Messages;
+import util.methods.Settings;
+import util.methods.Var;
+
+import net.minecraft.server.v1_12_R1.PacketPlayInClientCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
+
+import org.bukkit.craftbukkit.v1_12_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -24,7 +26,7 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 public class EVENTkill implements Listener {
 
 
-    private static Bedwars.Main plugin;
+    private static main.Main plugin;
 
     public EVENTkill(Main plugin) {
         this.plugin = plugin;
@@ -59,7 +61,7 @@ public class EVENTkill implements Listener {
                                 p.sendMessage(msg1);
                                 GameState.checkWinning();
                                 for (Player a : Bukkit.getOnlinePlayers())
-                                    Util.Scoreboard.updateScoreboard(a);
+                                    util.Scoreboard.updateScoreboard(a);
                             } else {
                                 String msg = ChatColor.translateAlternateColorCodes('&', cfg.getString("Deathmessage").replace("%player%", p.getDisplayName()));
                                 String msg1 = ChatColor.translateAlternateColorCodes('&', cfg.getString("Ingame_Respawn"));
@@ -68,7 +70,7 @@ public class EVENTkill implements Listener {
                                 p.sendMessage(msg1);
                                 GameState.checkWinning();
                                 for (Player a : Bukkit.getOnlinePlayers())
-                                    Util.Scoreboard.updateScoreboard(a);
+                                    util.Scoreboard.updateScoreboard(a);
                             }
                         } else {
                             if (p.getLastDamageCause().getCause().equals(EntityDamageEvent.DamageCause.ENTITY_ATTACK)) {
@@ -86,7 +88,7 @@ public class EVENTkill implements Listener {
                                 Var.spectating.add(p);
                                 GameState.checkWinning();
                                 for (Player a : Bukkit.getOnlinePlayers())
-                                    Util.Scoreboard.updateScoreboard(a);
+                                    util.Scoreboard.updateScoreboard(a);
                             } else {
                                 Var.blue.remove(p);
                                 String msg2 = ChatColor.translateAlternateColorCodes('&', cfg.getString("Left_Blue").replace("%size%", Integer.toString(Var.blue.size())));
@@ -102,7 +104,7 @@ public class EVENTkill implements Listener {
                                 Bukkit.broadcastMessage(msg2);
                                 GameState.checkWinning();
                                 for (Player a : Bukkit.getOnlinePlayers())
-                                    Util.Scoreboard.updateScoreboard(a);
+                                    util.Scoreboard.updateScoreboard(a);
                             }
                         }
                     } else if (Var.green.contains(p)) {
@@ -115,7 +117,7 @@ public class EVENTkill implements Listener {
                                 p.sendMessage(msg1);
                                 GameState.checkWinning();
                                 for (Player a : Bukkit.getOnlinePlayers())
-                                    Util.Scoreboard.updateScoreboard(a);
+                                    util.Scoreboard.updateScoreboard(a);
                             } else {
                                 String msg = ChatColor.translateAlternateColorCodes('&', cfg.getString("Deathmessage").replace("%player%", p.getDisplayName()));
                                 String msg1 = ChatColor.translateAlternateColorCodes('&', cfg.getString("Ingame_Respawn"));
@@ -124,7 +126,7 @@ public class EVENTkill implements Listener {
                                 p.sendMessage(msg1);
                                 GameState.checkWinning();
                                 for (Player a : Bukkit.getOnlinePlayers())
-                                    Util.Scoreboard.updateScoreboard(a);
+                                    util.Scoreboard.updateScoreboard(a);
                             }
                         } else {
                             if (p.getLastDamageCause().getCause().equals(EntityDamageEvent.DamageCause.ENTITY_ATTACK)) {
@@ -142,7 +144,7 @@ public class EVENTkill implements Listener {
                                 Var.spectating.add(p);
                                 GameState.checkWinning();
                                 for (Player a : Bukkit.getOnlinePlayers())
-                                    Util.Scoreboard.updateScoreboard(a);
+                                    util.Scoreboard.updateScoreboard(a);
                             } else {
                                 Var.green.remove(p);
                                 String msg2 = ChatColor.translateAlternateColorCodes('&', cfg.getString("Left_Green").replace("%size%", Integer.toString(Var.green.size())));
@@ -158,7 +160,7 @@ public class EVENTkill implements Listener {
                                 Bukkit.broadcastMessage(msg2);
                                 GameState.checkWinning();
                                 for (Player a : Bukkit.getOnlinePlayers())
-                                    Util.Scoreboard.updateScoreboard(a);
+                                    util.Scoreboard.updateScoreboard(a);
                             }
                         }
                     } else if (Var.red.contains(p)) {
@@ -171,7 +173,7 @@ public class EVENTkill implements Listener {
                                 p.sendMessage(msg1);
                                 GameState.checkWinning();
                                 for (Player a : Bukkit.getOnlinePlayers())
-                                    Util.Scoreboard.updateScoreboard(a);
+                                    util.Scoreboard.updateScoreboard(a);
                             } else {
                                 String msg = ChatColor.translateAlternateColorCodes('&', cfg.getString("Deathmessage").replace("%player%", p.getDisplayName()));
                                 String msg1 = ChatColor.translateAlternateColorCodes('&', cfg.getString("Ingame_Respawn"));
@@ -180,7 +182,7 @@ public class EVENTkill implements Listener {
                                 p.sendMessage(msg1);
                                 GameState.checkWinning();
                                 for (Player a : Bukkit.getOnlinePlayers())
-                                    Util.Scoreboard.updateScoreboard(a);
+                                    util.Scoreboard.updateScoreboard(a);
 
 
                             }
@@ -200,7 +202,7 @@ public class EVENTkill implements Listener {
                                 Var.spectating.add(p);
                                 GameState.checkWinning();
                                 for (Player a : Bukkit.getOnlinePlayers())
-                                    Util.Scoreboard.updateScoreboard(a);
+                                    util.Scoreboard.updateScoreboard(a);
                             } else {
                                 Var.red.remove(p);
                                 String msg2 = ChatColor.translateAlternateColorCodes('&', cfg.getString("Left_Red").replace("%size%", Integer.toString(Var.red.size())));
@@ -216,7 +218,7 @@ public class EVENTkill implements Listener {
                                 GameState.checkWinning();
                                 Bukkit.broadcastMessage(msg2);
                                 for (Player a : Bukkit.getOnlinePlayers())
-                                    Util.Scoreboard.updateScoreboard(a);
+                                    util.Scoreboard.updateScoreboard(a);
                             }
                         }
                     } else if (Var.yellow.contains(p)) {
@@ -229,7 +231,7 @@ public class EVENTkill implements Listener {
                                 p.sendMessage(msg1);
                                 GameState.checkWinning();
                                 for (Player a : Bukkit.getOnlinePlayers())
-                                    Util.Scoreboard.updateScoreboard(a);
+                                    util.Scoreboard.updateScoreboard(a);
                             } else {
                                 String msg = ChatColor.translateAlternateColorCodes('&', cfg.getString("Deathmessage").replace("%player%", p.getDisplayName()));
                                 String msg1 = ChatColor.translateAlternateColorCodes('&', cfg.getString("Ingame_Respawn"));
@@ -238,7 +240,7 @@ public class EVENTkill implements Listener {
                                 p.sendMessage(msg1);
                                 GameState.checkWinning();
                                 for (Player a : Bukkit.getOnlinePlayers())
-                                    Util.Scoreboard.updateScoreboard(a);
+                                    util.Scoreboard.updateScoreboard(a);
                             }
                         } else {
                             if (p.getLastDamageCause().getCause().equals(EntityDamageEvent.DamageCause.ENTITY_ATTACK)) {
@@ -256,7 +258,7 @@ public class EVENTkill implements Listener {
                                 Var.spectating.add(p);
                                 GameState.checkWinning();
                                 for (Player a : Bukkit.getOnlinePlayers())
-                                    Util.Scoreboard.updateScoreboard(a);
+                                    util.Scoreboard.updateScoreboard(a);
                             } else {
                                 Var.yellow.remove(p);
                                 String msg2 = ChatColor.translateAlternateColorCodes('&', cfg.getString("Left_Yellow").replace("%size%", Integer.toString(Var.yellow.size())));
@@ -272,7 +274,7 @@ public class EVENTkill implements Listener {
                                 GameState.checkWinning();
                                 Bukkit.broadcastMessage(msg2);
                                 for (Player a : Bukkit.getOnlinePlayers())
-                                    Util.Scoreboard.updateScoreboard(a);
+                                    util.Scoreboard.updateScoreboard(a);
                             }
                         }
                     } else {

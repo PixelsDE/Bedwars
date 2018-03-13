@@ -1,17 +1,13 @@
 package gamestates;
 
-import Bedwars.Main;
-import methods.Messages;
-import methods.Settings;
+import main.Main;
+import util.methods.Messages;
+import util.methods.Settings;
 import org.bukkit.Bukkit;
 
-import methods.Var;
-import methods.countdowns.LobbyCountdown;
+import util.methods.countdowns.LobbyCountdown;
 import org.bukkit.ChatColor;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-
-import java.io.File;
 
 public class LobbyState extends GameState {
 
